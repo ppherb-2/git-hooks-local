@@ -1,0 +1,15 @@
+#!/bin/sh
+
+regex='@company\.com$'
+email=$GIT_AUTHOR_NAME
+
+if [[$email =~ $regex]]
+then
+  echo your email $email statisfies Git policy
+  exit 0
+
+else
+  echo your email $email does not statisfy Git policy
+  exit 1
+
+fi
